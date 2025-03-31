@@ -1,0 +1,3 @@
+C:/Users/USER/Hospital_Consultation/backend/build/CMakeFiles/hospital_server.dir
+C:/Users/USER/Hospital_Consultation/backend/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/USER/Hospital_Consultation/backend/build/CMakeFiles/ZERO_CHECK.dir
