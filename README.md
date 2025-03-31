@@ -1,37 +1,37 @@
-# Hospital Consultation System
+# 🏥 Hospital Consultation System
 
 A modern web-based hospital consultation management system that streamlines the process of scheduling and managing medical consultations between patients and doctors.
 
-## Features
+## ✨ Features
 
-- **Patient Management**
+- **👥 Patient Management**
 
   - Patient registration and profile management
   - Medical history tracking
   - Insurance information management
   - Emergency contact details
 
-- **Doctor Management**
+- **👨‍⚕️ Doctor Management**
 
   - Doctor profiles with specialization
   - Department-wise organization
   - Availability tracking
   - Status management (Active/Inactive/On Leave)
 
-- **Appointment Scheduling**
+- **📅 Appointment Scheduling**
 
   - Real-time availability checking
   - Automated time slot management
   - Appointment status tracking
   - Consultation notes and documentation
 
-- **Dashboard**
+- **📊 Dashboard**
   - Quick statistics overview
   - Recent notifications
   - Quick action cards
   - System status monitoring
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
 
@@ -47,13 +47,86 @@ A modern web-based hospital consultation management system that streamlines the 
 - MySQL2 (Promise-based)
 - CORS enabled for cross-origin requests
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Node.js (v14 or higher)
 - MySQL Server (v8.0 or higher)
 - Modern web browser
 
-## Installation
+## 🔄 Control Flow
+
+### System Architecture
+
+```mermaid
+graph TD
+    A[Frontend UI] -->|HTTP Requests| B[Backend API]
+    B -->|Database Queries| C[MySQL Database]
+    B -->|Authentication| D[User Session]
+    D -->|Authorization| E[Access Control]
+```
+
+### Data Flow
+
+1. **User Interface Layer**
+
+   - Frontend components (HTML, CSS)
+   - User interactions and form submissions
+   - Real-time data updates
+
+2. **Application Layer**
+
+   - API endpoints handling
+   - Business logic processing
+   - Data validation and sanitization
+
+3. **Data Layer**
+   - Database operations
+   - Data persistence
+   - Query optimization
+
+### Key Processes
+
+1. **Appointment Booking Flow**
+
+   ```mermaid
+   sequenceDiagram
+      participant User
+      participant Frontend
+      participant Backend
+      participant Database
+
+      User->>Frontend: Select Doctor & Date
+      Frontend->>Backend: Get Available Slots
+      Backend->>Database: Query Schedule
+      Database-->>Backend: Return Slots
+      Backend-->>Frontend: Display Slots
+      User->>Frontend: Select Time Slot
+      Frontend->>Backend: Create Appointment
+      Backend->>Database: Save Appointment
+      Database-->>Backend: Confirm Save
+      Backend-->>Frontend: Show Success
+   ```
+
+2. **Patient Registration Flow**
+
+   ```mermaid
+   sequenceDiagram
+      participant User
+      participant Frontend
+      participant Backend
+      participant Database
+
+      User->>Frontend: Fill Registration Form
+      Frontend->>Frontend: Validate Input
+      Frontend->>Backend: Submit Data
+      Backend->>Backend: Process Data
+      Backend->>Database: Create Patient
+      Database-->>Backend: Confirm Creation
+      Backend-->>Frontend: Return Success
+      Frontend-->>User: Show Confirmation
+   ```
+
+## 🚀 Installation
 
 1. Clone the repository:
 
@@ -92,7 +165,7 @@ A modern web-based hospital consultation management system that streamlines the 
    - Use any static file server (e.g., Live Server in VS Code)
    - The frontend will be available at `http://localhost:5500`
 
-## API Endpoints
+## 🔌 API Endpoints
 
 ### Patients
 
@@ -122,7 +195,7 @@ A modern web-based hospital consultation management system that streamlines the 
 - `GET /api/patients/count` - Get total patient count
 - `GET /api/appointments/count` - Get total appointment count
 
-## Security Features
+## 🔒 Security Features
 
 - Input validation for all forms
 - SQL injection prevention using parameterized queries
@@ -130,7 +203,7 @@ A modern web-based hospital consultation management system that streamlines the 
 - Error handling and logging
 - Secure password handling
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -138,22 +211,22 @@ A modern web-based hospital consultation management system that streamlines the 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - Bootstrap for the UI components
 - Font Awesome for the icons
 - MySQL for the database
 - Express.js for the backend framework
 
-## Support
+## 💬 Support
 
 For support, please open an issue in the GitHub repository or contact the development team.
 
-## Version History
+## 📈 Version History
 
 - 1.0.0
   - Initial release
